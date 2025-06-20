@@ -136,7 +136,7 @@ def predict_catboost():
         predicted_status, probability = predict_loan_status(input_data, "catboost")
 
         # Return the prediction as a JSON response
-        return jsonify({"predicted_status": predicted_status, "probability": (1 - probability)}), 200
+        return jsonify({"predicted_status": predicted_status, "probability": probability}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
